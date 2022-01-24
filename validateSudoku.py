@@ -43,3 +43,25 @@ def validateSolution(board):
             if digitListCopy:
                 return False
     return True
+
+def validInput(inputList):
+    currColumn = inputList[0]
+    currRow    = int(inputList[1])
+    currValue  = int(inputList[2])
+    # Number of elements has to be 
+    #   exactly three (column, row, number)
+    if len(inputList) != 3:
+        return False
+
+    # Column has to belong to the list of columnCords
+    columnCords = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
+    if currColumn not in columnCords:
+        return False
+
+    if currRow > 9 or currRow < 0:
+        return False
+    
+    if currValue > 9 or currValue < 0:
+        return False
+
+    return True
