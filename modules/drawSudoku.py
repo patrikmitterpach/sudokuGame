@@ -2,7 +2,7 @@ from os import system
 
 # Drawing the board is pretty complicated as different parts have to be
 #   printed simultaneously, leaving a pretty messy codebase. 
-def printBoard( board, originalBoard ):
+def printBoard( board, originalBoard, tag):
     assert(len(board)    == 9)
     assert(len(board[0]) == 9)
 
@@ -44,5 +44,8 @@ def printBoard( board, originalBoard ):
             # Column separation for box clarity
             if ii % 3 == 2:
                 print("   ", end="")
-        print(" ")
+        if i == 0: print("  Difficulty:")
+        elif i == 1: print(f'  {tag}')
+        else:
+            print(" ")
     print("\n")

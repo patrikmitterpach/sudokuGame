@@ -6,13 +6,15 @@ from copy import deepcopy
 
 
 if __name__ == '__main__':
-    originalBoard = loadFromFile("sudoku.txt")
+    gameDifficulty = 6# Range <1,6>, 0 used for testing
+    originalBoard, boardDescription = loadFromFile("sudoku.txt", gameDifficulty)
     currBoard = deepcopy(originalBoard) # keep original and current separate for
                                         #  drawing the board, deepcopy is
     gameActive = True                   #  useful as normal copy methods don't
                                         #  really work.
+    
     while gameActive :                
-        printBoard(currBoard, originalBoard)
+        printBoard(currBoard, originalBoard, boardDescription)
 
         if validateSolution(currBoard):
             print("\t\tYOU WON\n\n")
@@ -39,11 +41,11 @@ if __name__ == '__main__':
                 break
 
             except IndexError:
-                printBoard(currBoard, originalBoard)
+                printBoard(currBoard, originalBoard, boardDescription)
                 print('Invalid move, please enter a valid one.')
 
             except ValueError:
-                printBoard(currBoard, originalBoard)
+                printBoard(currBoard, originalBoard, boardDescription)
                 print('Original positions cannot be overwritten,')
                 print(' please enter a valid move.')
                 
