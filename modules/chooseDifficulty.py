@@ -11,8 +11,8 @@ def printDifficultyScreen():
                3: Hard      \n")
 
 def chooseDifficulty():
-    difficultyDictionary = { -1 : 0, # testing board, or an easter egg 
-                              0 : randrange(7),
+    difficultyDictionary = { -1 : 0, # testing board, or an easter egg B) 
+                              0 : randrange(1,7),
                               1 : randrange(1,3),
                               2 : randrange(3,5),
                               3 : randrange(5,7)  }                        
