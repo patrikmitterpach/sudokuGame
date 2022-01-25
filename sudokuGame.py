@@ -11,11 +11,11 @@ if __name__ == '__main__':
                                         #  drawing the board, deepcopy is
     gameActive = True                   #  useful as normal copy methods don't
                                         #  really work.
-    while (gameActive) :                
+    while gameActive :                
         printBoard(currBoard, originalBoard)
 
         if validateSolution(currBoard):
-            print("\tYOU WON\n")
+            print("\t\tYOU WON\n\n")
             break
         
         print("Enter next move: [ > COLUMN ROW NUMBER ]")
@@ -41,7 +41,7 @@ if __name__ == '__main__':
             except IndexError:
                 printBoard(currBoard, originalBoard)
                 print('Invalid move, please enter a valid one.')
-                
+
             except ValueError:
                 printBoard(currBoard, originalBoard)
                 print('Original positions cannot be overwritten,')
