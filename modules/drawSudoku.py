@@ -48,7 +48,7 @@ def printBoard( board, originalBoard, tag):
         elif i == 1: print(f'  {tag}')
         elif i == 3: print("  To delete a number,")
         elif i == 4: print("  enter the coordinates")
-        elif i == 5: print("  with 0 as NUMBER")
+        elif i == 5: print("  with 0 as NUMBER.")
 
         else:
             print(" ")
