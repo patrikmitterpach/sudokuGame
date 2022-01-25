@@ -44,8 +44,12 @@ def printBoard( board, originalBoard, tag):
             # Column separation for box clarity
             if ii % 3 == 2:
                 print("   ", end="")
-        if i == 0: print("  Difficulty:")
+        if i == 0:   print("  Difficulty:")
         elif i == 1: print(f'  {tag}')
+        elif i == 3: print("  To delete a number,")
+        elif i == 4: print("  enter the coordinates")
+        elif i == 5: print("  with 0 as NUMBER")
+
         else:
             print(" ")
     print("\n")
