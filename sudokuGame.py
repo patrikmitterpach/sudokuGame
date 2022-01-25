@@ -2,16 +2,15 @@ from os import system
 from copy import deepcopy
 from random import randrange
 
-from modules.chooseDifficulty import *
-from modules.drawSudoku import printBoard
-from modules.loadSudoku import loadFromFile
-from modules.validateSudoku import validateSolution, validInput
+import sudokuGame.console as console
+from sudokuGame.input import loadFromFile
+from sudokuGame.validation import validateSolution, validInput
 
 
 if __name__ == '__main__':
 
     # Difficulty:
-    gameDifficulty = chooseDifficulty()
+    gameDifficulty = console.chooseDifficulty()
 
     originalBoard, boardDescription = loadFromFile("sudoku.txt", gameDifficulty)
     currBoard = deepcopy(originalBoard) # keep original and current separate for
@@ -20,7 +19,7 @@ if __name__ == '__main__':
                                         #  really work.
     
     while gameActive :                
-        printBoard(currBoard, originalBoard, boardDescription)
+        console.printBoard(currBoard, originalBoard, boardDescription)
 
         if validateSolution(currBoard):
             print("\t\t   YOU WON\n\n")
@@ -50,10 +49,10 @@ if __name__ == '__main__':
                 break
 
             except IndexError:
-                printBoard(currBoard, originalBoard, boardDescription)
+                console.printBoard(currBoard, originalBoard, boardDescription)
                 print('Invalid move, please enter a valid one.\n\n')
             except ValueError:
-                printBoard(currBoard, originalBoard, boardDescription)
+                console.printBoard(currBoard, originalBoard, boardDescription)
                 print('Original positions cannot be overwritten,')
                 print('     please enter a valid move.\n')
                 
