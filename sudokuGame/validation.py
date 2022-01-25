@@ -6,7 +6,7 @@
 #   each line contains digits 1-9
 #   each 3x3  contains digits 1-9
 
-def validateSolution(board):
+def validSolution(board):
     digitList = [1,2,3,4,5,6,7,8,9]
 
     # Row validation
@@ -71,7 +71,7 @@ def validInput(inputList):
 
 if __name__ == '__main__':
     # Testing cases
-    assert ( validateSolution([ [5, 3, 4, 6, 7, 8, 9, 1, 2], 
+    assert ( validSolution([ [5, 3, 4, 6, 7, 8, 9, 1, 2], 
                                 [6, 7, 2, 1, 9, 5, 3, 4, 8],
                                 [1, 9, 8, 3, 4, 2, 5, 6, 7],
                                 [8, 5, 9, 7, 6, 1, 4, 2, 3],
@@ -81,7 +81,7 @@ if __name__ == '__main__':
                                 [2, 8, 7, 4, 1, 9, 6, 3, 5], # Valid testcase
                                 [3, 4, 5, 2, 8, 6, 1, 7, 9]] ) == True )
 
-    assert ( validateSolution([[5, 3, 4, 6, 7, 8, 9, 1, 2], 
+    assert ( validSolution([[5, 3, 4, 6, 7, 8, 9, 1, 2], 
                             [6, 7, 2, 1, 9, 0, 3, 4, 9],
                             [1, 0, 0, 3, 4, 2, 5, 6, 0],
                             [8, 5, 9, 7, 6, 1, 0, 2, 0],
@@ -91,7 +91,7 @@ if __name__ == '__main__':
                             [2, 8, 7, 4, 1, 9, 6, 3, 5], # Invalid digits
                             [3, 0, 0, 4, 8, 1, 1, 7, 9]]) == False )
 
-    assert ( validateSolution([[1, 3, 4, 6, 7, 8, 9, 1, 2], 
+    assert ( validSolution([[1, 3, 4, 6, 7, 8, 9, 1, 2], 
                             [1, 7, 2, 1, 9, 5, 3, 4, 8],
                             [1, 9, 8, 3, 4, 2, 5, 6, 7],
                             [1, 5, 9, 7, 6, 1, 4, 2, 3],
@@ -101,7 +101,7 @@ if __name__ == '__main__':
                             [1, 8, 7, 4, 1, 9, 6, 3, 5], # Invalid column
                             [1, 4, 5, 2, 8, 6, 1, 7, 9]] ) == False) 
 
-    assert ( validateSolution([[5, 3, 4, 6, 7, 8, 9, 1, 2], 
+    assert ( validSolution([[5, 3, 4, 6, 7, 8, 9, 1, 2], 
                             [6, 7, 2, 1, 9, 5, 3, 4, 8],
                             [1, 9, 8, 3, 4, 2, 5, 6, 7],
                             [8, 5, 9, 7, 6, 1, 4, 2, 3],
@@ -111,7 +111,7 @@ if __name__ == '__main__':
                             [2, 8, 7, 4, 1, 9, 6, 3, 5], # Invalid row
                             [1, 1, 1, 1, 1, 1, 1, 1, 1]] ) == False )
 
-    assert ( validateSolution([[5, 3, 4, 6, 7, 8, 9, 1, 2], 
+    assert ( validSolution([[5, 3, 4, 6, 7, 8, 9, 1, 2], 
                             [6, 7, 2, 1, 9, 5, 3, 4, 8],
                             [1, 9, 5, 3, 4, 2, 8, 6, 7],
                             [8, 5, 9, 7, 6, 1, 4, 2, 3],

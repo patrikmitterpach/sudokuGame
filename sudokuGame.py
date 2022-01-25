@@ -4,7 +4,7 @@ from random import randrange
 
 import sudokuGame.console as console
 from sudokuGame.input import loadFromFile
-from sudokuGame.validation import validateSolution, validInput
+from sudokuGame.validation import validSolution, validInput
 
 
 if __name__ == '__main__':
@@ -21,7 +21,7 @@ if __name__ == '__main__':
     while gameActive :                
         console.printBoard(currBoard, originalBoard, boardDescription)
 
-        if validateSolution(currBoard):
+        if validSolution(currBoard):
             print("\t\t   YOU WON\n\n")
             break
         
