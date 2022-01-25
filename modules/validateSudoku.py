@@ -45,17 +45,22 @@ def validateSolution(board):
     return True
 
 def validInput(inputList):
-    currColumn = inputList[0]
-    currRow    = int(inputList[1])
-    currValue  = int(inputList[2])
+    validColumns = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
+    
     # Number of elements has to be 
     #   exactly three (column, row, number)
     if len(inputList) != 3:
         return False
 
+    try:
+        currColumn = inputList[0]
+        currRow    = int(inputList[1])
+        currValue  = int(inputList[2])
+    except:
+        return False
+    
     # Column has to belong to the list of columnCords
-    columnCords = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
-    if currColumn not in columnCords:
+    if currColumn not in validColumns:
         return False
 
     if currRow > 9 or currRow < 0:

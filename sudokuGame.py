@@ -11,8 +11,6 @@ from modules.validateSudoku import validateSolution, validInput
 if __name__ == '__main__':
 
     # Difficulty:
-    
-
     gameDifficulty = chooseDifficulty()
 
     originalBoard, boardDescription = loadFromFile("sudoku.txt", gameDifficulty)
@@ -25,18 +23,17 @@ if __name__ == '__main__':
         printBoard(currBoard, originalBoard, boardDescription)
 
         if validateSolution(currBoard):
-            print("\t\tYOU WON\n\n")
+            print("\t\t   YOU WON\n\n")
             break
         
-        print("Enter next move: [ > COLUMN ROW NUMBER ]")
+        print("Enter next move: \n[ > COLUMN ROW NUMBER ]\n")
         while True:
             try:
                 newCoords = input(" > ")
                 coordsList = [char.upper() for char in newCoords if char != " "] 
                     # Add raw user input to a list and
                     #   check it with a function
-        
-                if not validInput(coordsList):
+                if len(coordsList) != 3 or not validInput(coordsList):
                     raise IndexError
         
                 columnCords = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
@@ -44,18 +41,21 @@ if __name__ == '__main__':
                 targetRow    = int(coordsList[1])-1
                 targetNumber = int(coordsList[2])
 
+                if targetRow < 0 or targetRow > 9:
+                    raise IndexError
+                if targetColumn not in range(10):
+                    raise IndexError
                 if originalBoard[targetRow][targetColumn] != 0:
                     raise ValueError
                 break
 
             except IndexError:
                 printBoard(currBoard, originalBoard, boardDescription)
-                print('Invalid move, please enter a valid one.')
-
+                print('Invalid move, please enter a valid one.\n\n')
             except ValueError:
                 printBoard(currBoard, originalBoard, boardDescription)
                 print('Original positions cannot be overwritten,')
-                print(' please enter a valid move.')
+                print('     please enter a valid move.\n')
                 
 
         currBoard[targetRow][targetColumn] = targetNumber
