@@ -1,12 +1,20 @@
-from modules.validateSudoku import validateSolution, validInput
-from modules.drawSudoku import printBoard
-from modules.loadSudoku import loadFromFile
 from os import system
 from copy import deepcopy
+from random import randrange
+
+from modules.chooseDifficulty import *
+from modules.drawSudoku import printBoard
+from modules.loadSudoku import loadFromFile
+from modules.validateSudoku import validateSolution, validInput
 
 
 if __name__ == '__main__':
-    gameDifficulty = 6# Range <1,6>, 0 used for testing
+
+    # Difficulty:
+    
+
+    gameDifficulty = chooseDifficulty()
+
     originalBoard, boardDescription = loadFromFile("sudoku.txt", gameDifficulty)
     currBoard = deepcopy(originalBoard) # keep original and current separate for
                                         #  drawing the board, deepcopy is
@@ -23,7 +31,7 @@ if __name__ == '__main__':
         print("Enter next move: [ > COLUMN ROW NUMBER ]")
         while True:
             try:
-                newCoords = input("> ")
+                newCoords = input(" > ")
                 coordsList = [char.upper() for char in newCoords if char != " "] 
                     # Add raw user input to a list and
                     #   check it with a function
