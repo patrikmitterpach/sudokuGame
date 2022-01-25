@@ -53,19 +53,17 @@ def validInput(inputList):
         return False
 
     try:
-        currColumn = inputList[0]
-        currRow    = int(inputList[1])
-        currValue  = int(inputList[2])
+        currColumn = inputList[0]           # I've built myself into a terrible
+        currRow    = int(inputList[1])      #  situation with the input handling,
+        currValue  = int(inputList[2])      #  but this should handle most cases..
     except:
         return False
     
     # Column has to belong to the list of columnCords
     if currColumn not in validColumns:
         return False
-
     if currRow > 9 or currRow < 0:
         return False
-    
     if currValue > 9 or currValue < 0:
         return False
 
