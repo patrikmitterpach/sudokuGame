@@ -8,7 +8,7 @@ def printDifficultyScreen():
     system('clear')
     print("             \n\n\n\
         Choose difficulty:  \n\
-            0: Auto         \n\
+            0: Random       \n\
              1: Easy        \n\
               2: Medium     \n\
                3: Hard      \n")
@@ -32,6 +32,9 @@ def chooseDifficulty():
             printDifficultyScreen()
             print("\t Invalid choice")
             print("\t  [ > NUMBER ]\n")
+        except:
+            print("\n")
+            quit()
     
     
     return difficultyDictionary[userChoice]
@@ -44,7 +47,7 @@ def printBoard( board, originalBoard, tag):
     boardSymbol = "\N{cherry blossom}" #  emoji to display 
     system('clear')                    #    in the top left corner
 
-    print(f' {boardSymbol} |  ', end="") # end="" to ignore newline
+    print(f'\n {boardSymbol} |  ', end="") # end="" to ignore newline
     for i in range(9):
         print(f'\033[1m{boardChars[i]}  \033[0m', end="") # unix code for printing
         if i % 3 == 2:                                    #     in bold.
@@ -78,11 +81,11 @@ def printBoard( board, originalBoard, tag):
             # Column separation for box clarity
             if ii % 3 == 2:
                 print("   ", end="")
-        if i == 0:   print("  Difficulty:")
+        if i == 0:   print( "  Difficulty:")
         elif i == 1: print(f'  {tag}')
-        elif i == 3: print("  To delete a number,")
-        elif i == 4: print("  enter the coordinates")
-        elif i == 5: print("  with 0 as NUMBER.")
+        elif i == 3: print( "  To delete a number,")
+        elif i == 4: print( "  enter the coordinates")
+        elif i == 5: print( "  with 0 as NUMBER.")
 
         else:
             print(" ")

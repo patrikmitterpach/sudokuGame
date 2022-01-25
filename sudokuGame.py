@@ -2,14 +2,13 @@ from os import system
 from copy import deepcopy
 from random import randrange
 
-import sudokuGame.console as console
-from sudokuGame.input import loadFromFile
-from sudokuGame.validation import validSolution, validInput
+import lib.console as console
+from lib.input import loadFromFile
+from lib.validation import validSolution, validInput
 
 
 if __name__ == '__main__':
-
-    # Difficulty:
+    # Load difficulty
     gameDifficulty = console.chooseDifficulty()
 
     originalBoard, boardDescription = loadFromFile("sudoku.txt", gameDifficulty)
@@ -55,6 +54,9 @@ if __name__ == '__main__':
                 console.printBoard(currBoard, originalBoard, boardDescription)
                 print('Original positions cannot be overwritten,')
                 print('     please enter a valid move.\n')
+            except:
+                print("\n\n")
+                quit()
                 
 
         currBoard[targetRow][targetColumn] = targetNumber
