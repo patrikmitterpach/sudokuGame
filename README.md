@@ -1,5 +1,5 @@
 # 🌸 sudokuGame.py
-A small, light (0.5 MB) implementation of the classic, logic-based game of [Sudoku](https://en.wikipedia.org/wiki/Sudoku), made primarily as a learning project inspired by an algorithmic problem. 
+A small, light (0.25 MB) implementation of the classic, logic-based game of [Sudoku](https://en.wikipedia.org/wiki/Sudoku), made primarily as a learning project inspired by an algorithmic problem. 
 The game is complete with a coordinates system, user interface and victory validation and can be played on several difficulties, each with a couple of levels available.
 
 <img src="/screenshots/activeGame.jpg" width="500px">
